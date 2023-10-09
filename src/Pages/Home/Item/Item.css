@@ -1,0 +1,13 @@
+.item{
+    border: 1px solid lightcoral;
+    box-shadow: 2mm;
+    text-align: center;
+    background-color: aqua;
+}
+
+.card-body{
+    background-color: rgb(34, 8, 34);
+    color: antiquewhite;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+

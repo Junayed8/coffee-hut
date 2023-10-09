@@ -1,0 +1,14 @@
+.caption{
+    font: 600;
+}
+h3{
+    font-stretch: extra-expanded;
+    font-size: xx-large;
+    font-style: italic;
+    font-family: fantasy;
+}
+
+p{
+    font-stretch: ultra-expanded;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
