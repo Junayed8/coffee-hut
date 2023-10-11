@@ -4,6 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -55,11 +56,12 @@ const Login = () => {
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
-                <Button className='button' variant="primary" type="submit">
+                <Button className='button d-block' variant="primary" type="submit">
                     Submit
                 </Button>
             </Form>
-            <p>New to Coffee Hut? <Link to='/register' className='text-danger pe-auto text-decoration-none' onClick={navigateRegister}>Please Register.</Link></p>
+            <p className='text-center mt-4'>New to Coffee Hut? <Link to='/register' className='text-danger pe-auto text-decoration-none' onClick={navigateRegister}>Please Register.</Link></p>
+            <SocialLogin></SocialLogin>
         </div>
     );
 };

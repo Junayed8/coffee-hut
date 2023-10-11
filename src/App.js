@@ -10,6 +10,7 @@ import ItemDetail from './Pages/ItemDetail/ItemDetail';
 import NotFound from './Pages/Shared/NotFound/NotFound';
 import CheckOut from './Pages/CheckOut/CheckOut';
 import RequireAuth from './Pages/Requireauth/RequireAuth';
+import Blogs from './Pages/Blogs/Blogs';
 
 function App() {
     // All Routes //
@@ -22,6 +23,7 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/item/:itemId' element={<ItemDetail></ItemDetail>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/checkout' element={

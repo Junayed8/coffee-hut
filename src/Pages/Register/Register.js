@@ -3,6 +3,7 @@ import './Register.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 
 
@@ -60,7 +61,8 @@ const Register = () => {
                 <label className={agree ? 'ps-2 text-primary' : 'ps-2 text-danger'} htmlFor='terms'>Accept coffee-hut terms and conditions</label>
                 <input disabled={!agree} className='w-50 mx-auto btn btn-primary mt-2' type='submit' value="Register"/>
             </form>
-            <p>Already Register? <Link to='/login' className='text-danger pe-auto text-decoration-none' onClick={navigateLogin}>Please login</Link> </p>
+            <p className='text-center mt-4'>Already Register? <Link to='/login' className='text-danger pe-auto text-decoration-none' onClick={navigateLogin}>Please login</Link> </p>
+            <SocialLogin></SocialLogin>
         
         </div>
 
