@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import './Login.css';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
@@ -21,10 +21,16 @@ const Login = () => {
         error,
       ] = useSignInWithEmailAndPassword(auth);
 
+      const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
       if(user){
         navigate(from, {replace:true});
       }
-    
+    const resetPassword=async()=>{
+        const email = emailRef.current.value;
+         await sendPasswordResetEmail(email);
+         alert ('Sent Email');
+    }
     const handleSubmit= event=>{
         event.preventDefault();
         const email= emailRef.current.value;
@@ -57,10 +63,11 @@ const Login = () => {
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
                 <Button className='button d-block' variant="primary" type="submit">
-                    Submit
+                    Login
                 </Button>
             </Form>
             <p className='text-center mt-4'>New to Coffee Hut? <Link to='/register' className='text-danger pe-auto text-decoration-none' onClick={navigateRegister}>Please Register.</Link></p>
+            <p className='text-center mt-4'>Forgot Password? <Link to='/register' className='text-danger pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</Link></p>
             <SocialLogin></SocialLogin>
         </div>
     );

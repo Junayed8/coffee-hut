@@ -6,7 +6,7 @@ import auth from '../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 
-
+//* All about signUp *//
 
 const Register = () => {
   const [agree, setAgree]= useState(false);
